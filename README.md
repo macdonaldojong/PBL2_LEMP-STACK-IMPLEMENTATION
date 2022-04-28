@@ -1,0 +1,2 @@
+# darey_project2
+LEMP STACK IMPLEMENTATION
