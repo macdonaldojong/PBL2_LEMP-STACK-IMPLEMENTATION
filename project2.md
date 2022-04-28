@@ -119,25 +119,25 @@ try {
     die();
 }
 
+
 ![](./images/Todo%20list.PNG)
 
 
+*** END OF Project ***
 
-
-## *****END OF Project*****
-
-## -> Remove NGINX from Ubuntu if using previous in project1
+**Remove NGINX from Ubuntu if using previous in project1**
 `sudo apt remove nginx`
 
-## Purge will uninstall NGINX from the system
+**Purge will uninstall NGINX from the system**.
 
 `sudo apt purge nginx`
 
-##Remove Apache web server from Ubuntu
+**Remove Apache web server from Ubuntu**.
 
 `sudo apt remove apache2`
 
-Remove will uninstall Apache from the system, but leave the configuration files behind.
-Purge will uninstall Apache from the system, along with the configuration files inside /etc/apache2
+**Remove will uninstall Apache from the system, but leave the configuration files behind**.
+
+**Purge will uninstall Apache from the system, along with the configuration files inside /etc/apache2**.
 
 `sudo apt purge apache2`
