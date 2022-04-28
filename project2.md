@@ -15,9 +15,9 @@ or
 curl http://127.0.0.1:80
  
 
- ![](./images/intalling%20nginx.PNG)
+ ![install nginx](./images/intalling%20nginx.PNG)
 
- ![](./images/nginx%20running.PNG)
+ ![nginx running](./images/nginx%20running.PNG)
 
  
 ## Step 2 — Installing MySQL
@@ -29,7 +29,7 @@ curl http://127.0.0.1:80
 
 `exit`
  
-![](./images/install%20mysql.PNG)
+![install mysql](./images/install%20mysql.PNG)
 
 
 ## STEP 3 – INSTALLING PHP
@@ -47,7 +47,7 @@ curl http://127.0.0.1:80
 sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
 sudo nginx -t
 
-![](./images/intalling%20nginx.PNG)
+![install nginx ](./images/intalling%20nginx.PNG)
 
 
 `sudo unlink /etc/nginx/sites-enabled/default`
@@ -56,7 +56,7 @@ sudo nginx -t
 
 `sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
 
-![](./images/nginx%20install.PNG)
+![install nginx](./images/nginx%20install.PNG)
 
 ## Step 5 – Testing PHP with Nginx
 
@@ -71,7 +71,7 @@ phpinfo();
 
 `sudo apt install libapache2-mod-php`
 
-![](./images/PHP%20running.PNG)
+![Php running](./images/PHP%20running.PNG)
  
 ## STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP
 
@@ -89,7 +89,7 @@ CREATE TABLE Demo.todo_list (
     -> content VARCHAR(255),
     -> PRIMARY KEY(item_id));
 
-![](./images/create%20mysql%20table.PNG)
+![create mysql table](./images/create%20mysql%20table.PNG)
 
 INSERT INTO Demo.todo_list (content) VALUES ("My first important item");
 INSERT INTO Demo.todo_list (content) VALUES ("My second important item");
@@ -107,6 +107,7 @@ $user = "admin";
 $password = "password.11";
 $database = "Demo";
 $table = "todo_list";
+
 try {
   $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
   echo "<h2>TODO</h2><ol>";
@@ -118,10 +119,7 @@ try {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
-
-
-![](./images/Todo%20list.PNG)
-
+![Todo list](./images/Todo%20list.PNG)
 
 *** END OF Project ***
 
