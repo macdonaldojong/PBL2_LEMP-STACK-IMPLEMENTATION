@@ -58,6 +58,56 @@ sudo nginx -t
 
 ![install nginx](./images/nginx%20install.PNG)
 
-## Step 5 – Testing PHP with Nginx
+## Step5: Testing PHP with Nginx
 
 `sudo nano /var/www/projectLEMP/info.php`
+
+<?php
+phpinfo();
+
+sudo rm /var/www/your_domain/info.php
+** For PHP 7: install libapache2-mod-php:
+
+`sudo apt install libapache2-mod-php`
+
+## STEP6: RETRIEVING DATA FROM MYSQL DATABASE WITH PHP
+
+sudo mysql
+mysql> CREATE DATABASE `Demo`;
+CREATE USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'Password.11';
+mysql> GRANT ALL ON Demo.* TO 'admin'@'%';
+mysql> exit
+mysql -u admin –p
+
+CREATE TABLE Demo.todo_list (
+    -> item_id INT AUTO_INCREMENT,
+    -> content VARCHAR(255),
+    -> PRIMARY KEY(item_id));
+
+INSERT INTO Demo.todo_list (content) VALUES ("My first important item");
+INSERT INTO Demo.todo_list (content) VALUES ("My second important item");
+INSERT INTO Demo.todo_list (content) VALUES ("My 3rd important item");
+INSERT INTO Demo.todo_list (content) VALUES ("Much more important item are available");
+
+mysql> exit
+
+nano /var/www/projectLEMP/todo_list.php
+
+**To display on php, copy this content into your todo_list.php script:**
+
+<?php
+$user = "admin";
+$password = "password.11";
+$database = "Demo";
+$table = "todo_list";
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
