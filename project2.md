@@ -49,11 +49,11 @@ curl http://127.0.0.1:80
 ================================
 
 * sudo nano /var/www/projectLEMP/info.php`
-
+---
 <?php
 phpinfo();
 sudo rm /var/www/your_domain/info.php
-
+---
 **For PHP 7: install libapache2-mod-php:
 
  sudo apt install libapache2-mod-php
@@ -107,21 +107,16 @@ try {
   }
 ---
 ![Todo list](./images/Todo%20list.PNG)
+
 ==================== END OF Project=====================
 
-**Remove NGINX from Ubuntu if using previous in project1**
-`sudo apt remove nginx`
+* Remove NGINX from Ubuntu if using previous in project1
+* sudo apt remove nginx
+* Purge will uninstall NGINX from the system
+* sudo apt purge nginx
+* Remove Apache web server from Ubuntu
+* sudo apt remove apache2
 
-**Purge will uninstall NGINX from the system**.
-
-`sudo apt purge nginx`
-
-**Remove Apache web server from Ubuntu**.
-
-`sudo apt remove apache2`
-
-**Remove will uninstall Apache from the system, but leave the configuration files behind**.
-
-**Purge will uninstall Apache from the system, along with the configuration files inside /etc/apache2**.
-
-`sudo apt purge apache2`
+* Remove will uninstall Apache from the system, but leave the configuration files behind
+* Purge will uninstall Apache from the system, along with the configuration files inside /etc/apache2
+* sudo apt purge apache2
