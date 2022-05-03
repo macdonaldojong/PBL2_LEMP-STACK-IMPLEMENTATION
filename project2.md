@@ -70,12 +70,12 @@ sudo rm /var/www/your_domain/info.php
 * mysql> exit
 
 * mysql -u admin –p
----
+===
 CREATE TABLE Demo.todo_list (
     -> item_id INT AUTO_INCREMENT,
     -> content VARCHAR(255),
     -> PRIMARY KEY(item_id));
----
+===
 ![create mysql table](./images/create%20mysql%20table.PNG)
 =============================
 
@@ -87,7 +87,7 @@ CREATE TABLE Demo.todo_list (
 * sudo nano /var/www/projectLEMP/todo_list.php
 
 ### To display on php, copy this content into your todo_list.php script:
----
+============================
 <?php
 $user = "admin";
 $password = "password.11";
@@ -105,8 +105,11 @@ try {
         print "Error!: " . $e->getMessage() . "<br/>";
         die();
   }
----
+============================
 ![Todo list](./images/Todo%20list.PNG)
+
+
+
 
 ==================== END OF Project=====================
 
